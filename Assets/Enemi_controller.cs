@@ -22,11 +22,11 @@ public class Enemi_controller : MonoBehaviour
     //public Animator shieldAnim;
    // public Animator bodyAnim;
 
-    private bool isblocking = false;
+   /* private bool isblocking = false;
 
     private bool isDash = false, isDashing = false;
     private float dashTime, waitTime;
-
+    */
 
     void Start() {
         Gplayer = GameObject.FindWithTag("Player");
@@ -78,7 +78,7 @@ public class Enemi_controller : MonoBehaviour
         }
         // DASH END       -------------------------------------------------------------------------------------
         */
-        // ARROW MOVEMENT -------------------------------------------------------------------------------------
+        //  MOVEMENT -------------------------------------------------------------------------------------
         if (Vector3.Distance(transform.position, Player.position) >= MinDist) {
             transform.position += transform.forward * speed * Time.deltaTime;
         }
@@ -120,17 +120,26 @@ public class Enemi_controller : MonoBehaviour
             // END BLOCK ----------------------------------------------------------------------------------------------
 
     }
-   /*void OnGUI()
+    /*void OnGUI()
+     {
+         GUILayout.BeginArea(new Rect(20, 20, 250, 250));
+         GUILayout.Label("World position: " + pointShoot.ToString("F3"));
+         GUILayout.Label("Character Position: " + transform.position.ToString("F3"));
+         GUILayout.Label("Movement to: " + transform.forward.ToString("F3"));
+         GUILayout.Label("Is Dash: " + isDash);
+         GUILayout.Label("DashTime: " + dashTime);
+         GUILayout.Label("Wait Time:" + waitTime);
+         GUILayout.EndArea();
+
+
+     }*/
+
+    void OnTriggerEnter(Collider other)
     {
-        GUILayout.BeginArea(new Rect(20, 20, 250, 250));
-        GUILayout.Label("World position: " + pointShoot.ToString("F3"));
-        GUILayout.Label("Character Position: " + transform.position.ToString("F3"));
-        GUILayout.Label("Movement to: " + transform.forward.ToString("F3"));
-        GUILayout.Label("Is Dash: " + isDash);
-        GUILayout.Label("DashTime: " + dashTime);
-        GUILayout.Label("Wait Time:" + waitTime);
-        GUILayout.EndArea();
+        if (other.tag == "Player")
+        {
+            Debug.Log("Enemigo atacando " + other.name);
 
-
-    }*/
+        }
+    }
 }

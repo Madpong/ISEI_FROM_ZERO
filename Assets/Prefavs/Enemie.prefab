@@ -271,10 +271,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4.13
   walkSpeed: 1.65
+  power: 4
+  hits: 0
   MoveSpeed: 2.98
   MaxDist: 10
   MinDist: 1
   AttackRange: 2.5
+  AttackCD: 0
+  isAttack: 0
 --- !u!1 &2312390945496736525
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,7 +803,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  power: 0
   maxHealth: 20.77
   MainGameObject: {fileID: 2312390945482678416}
 --- !u!1 &8402768037761491135
@@ -813,7 +816,6 @@ GameObject:
   - component: {fileID: 3891751655671584713}
   - component: {fileID: 9210687729109133997}
   - component: {fileID: 7673484182761005781}
-  - component: {fileID: 3989239222904682396}
   m_Layer: 0
   m_Name: Atack_Area
   m_TagString: Enemy
@@ -864,16 +866,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3989239222904682396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8402768037761491135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f2b068177cb6bb42b0bdfaa86f7aee8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  power: 6.05

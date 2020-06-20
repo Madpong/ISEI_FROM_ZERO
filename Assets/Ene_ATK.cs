@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ene_ATK : MonoBehaviour, Ienemie
 {
 
-    public float currentHealth, power;
+    public float currentHealth;
     public float maxHealth;
     public GameObject MainGameObject;
 

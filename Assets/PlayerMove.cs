@@ -8,6 +8,7 @@ public class PlayerMove : MonoBehaviour
     // speed is the rate at which the object will rotate
     public float speed, walkSpeed, dashSpeed;
     private Vector3 pointShoot;
+    public int currenthealth, maxHealth;
     
     public Animator swordAnim;
     public Animator shieldAnim;
@@ -17,7 +18,11 @@ public class PlayerMove : MonoBehaviour
 
     private bool isDash = false, isDashing = false;
     private float dashTime, waitTime;
-       
+
+    void Start() {
+
+        currenthealth = maxHealth;
+    }
    
     void FixedUpdate()
     {
@@ -116,6 +121,20 @@ public class PlayerMove : MonoBehaviour
 
         // END BLOCK ----------------------------------------------------------------------------------------------
 
+        // HEAL CHECKER --------------------------------------------------------------------------------------------
+
+        if (currenthealth <= 0) {
+
+            Die();
+        
+        }
+        // EN HEAL CHECKER ------------------------------------------------------------------------------------------
+
+    }
+
+    void Die() {
+        Destroy(gameObject);
+    
     }
     void OnGUI()
     {
@@ -123,9 +142,10 @@ public class PlayerMove : MonoBehaviour
         GUILayout.Label("World position: " + pointShoot.ToString("F3"));
         GUILayout.Label("Character Position: " + transform.position.ToString("F3"));
         GUILayout.Label("Movement to: " + transform.forward.ToString("F3"));
-        GUILayout.Label("Is Dash: " + isDash);
-        GUILayout.Label("DashTime: " + dashTime);
-        GUILayout.Label("Wait Time:" + waitTime);
+        //GUILayout.Label("Is Dash: " + isDash);
+        //GUILayout.Label("DashTime: " + dashTime);
+        GUILayout.Label("Dash CD:" + waitTime);
+        GUILayout.Label("Current Health: " + currenthealth);
         GUILayout.EndArea();
 
        

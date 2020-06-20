@@ -5,7 +5,7 @@ using UnityEngine;
 public class Col_Check_Weapon : MonoBehaviour
 {
 
-
+    public int power;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +24,7 @@ public class Col_Check_Weapon : MonoBehaviour
         {
             Debug.Log("Player Hit: " + other.name);
             // To Do
-            other.GetComponent<Ienemie>().TakeDamage(10);
+            other.GetComponent<Ienemie>().TakeDamage(power);
             //Do Damage 
             //other.GetComponent<Ienemy>().TakeDamaga(weaponDmg);
             //Block Damge if we are in Block State

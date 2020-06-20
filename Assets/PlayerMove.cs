@@ -85,7 +85,7 @@ public class PlayerMove : MonoBehaviour
 
         // ATACK ------------------------------------------------------------------------------------------------
 
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !isblocking)
         {
             swordAnim.SetTrigger("ATK");
         }
@@ -108,7 +108,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.F))
         {
             shieldAnim.SetTrigger("stop_block");
-            //   isblocking = false;
+            isblocking = false;
             // }
         }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ene_ATK : MonoBehaviour, Ienemie
 {
 
-    public float health, currentHealth, power, toughness;
+    public float currentHealth, power;
     public float maxHealth;
     public GameObject MainGameObject;
 
@@ -14,7 +14,7 @@ public class Ene_ATK : MonoBehaviour, Ienemie
         currentHealth = maxHealth;
     }
 
-    public void PerformAttack()
+    public void PerformAttack(int amount)
     {
         throw new System.NotImplementedException();
     }
@@ -22,7 +22,7 @@ public class Ene_ATK : MonoBehaviour, Ienemie
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
-        if (amount <= 0)
+        if (currentHealth <= 0)
         {
             Die();
         }
@@ -30,15 +30,8 @@ public class Ene_ATK : MonoBehaviour, Ienemie
 
     void Die() {
 
-        Destroy(gameObject);
+        Destroy(MainGameObject);
     
     }
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            Debug.Log("Enemigo atacando " + other.name);
-
-        }
-    }
+   
 }

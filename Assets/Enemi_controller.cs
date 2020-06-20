@@ -6,7 +6,7 @@ public class Enemi_controller : MonoBehaviour
 {
 
     // speed is the rate at which the object will rotate
-    public float speed, walkSpeed, dashSpeed;
+    public float speed, walkSpeed;
     //private Vector3 pointShoot;
 
 
@@ -134,12 +134,5 @@ public class Enemi_controller : MonoBehaviour
 
      }*/
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            Debug.Log("Enemigo atacando " + other.name);
-
-        }
-    }
+   
 }

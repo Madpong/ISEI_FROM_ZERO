@@ -136,7 +136,7 @@ public class PlayerMove : MonoBehaviour
         Destroy(gameObject);
     
     }
-   /* void OnGUI()
+   void OnGUI()
     {
         GUILayout.BeginArea(new Rect(20, 20, 250, 250));
         GUILayout.Label("World position: " + pointShoot.ToString("F3"));
@@ -149,5 +149,5 @@ public class PlayerMove : MonoBehaviour
         GUILayout.EndArea();
 
        
-    }*/
+    }
 }

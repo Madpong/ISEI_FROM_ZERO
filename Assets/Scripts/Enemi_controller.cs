@@ -32,6 +32,7 @@ public class Enemi_controller : MonoBehaviour
     private float dashTime, waitTime;
     */
 
+    private Vector3 normalizePlayer;
     void Start() {
         Gplayer = GameObject.FindWithTag("Player");
         if (Gplayer != null)
@@ -45,9 +46,11 @@ public class Enemi_controller : MonoBehaviour
     {
         if (Player != null)
         {
+            normalizePlayer = Player.position;
             // LOOK AT PLAYER
+            normalizePlayer.y = transform.position.y;
             //---------------------------------------------------------------------------------------
-            transform.LookAt(Player);
+            transform.LookAt(normalizePlayer);
 
 
         // ------------------------------------------------------------------------------------

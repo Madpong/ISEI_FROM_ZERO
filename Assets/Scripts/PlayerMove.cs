@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Threading;
+using UnityEditor;
 using UnityEngine;
  
 public class PlayerMove : MonoBehaviour
 {
-
+    public Texture texture;
     // speed is the rate at which the object will rotate
     public float speed, walkSpeed, dashSpeed;
     private Vector3 pointShoot;
@@ -138,15 +139,19 @@ public class PlayerMove : MonoBehaviour
     }
    void OnGUI()
     {
-        GUILayout.BeginArea(new Rect(20, 20, 250, 250));
-        GUILayout.Label("World position: " + pointShoot.ToString("F3"));
+        
+        
+        GUILayout.BeginArea(new Rect(20, 250, 250, 250));
+        
+        GUILayout.Label("Mouse Position: " + Input.mousePosition.ToString("F3"));
         GUILayout.Label("Character Position: " + transform.position.ToString("F3"));
         GUILayout.Label("Movement to: " + transform.forward.ToString("F3"));
         //GUILayout.Label("Is Dash: " + isDash);
         //GUILayout.Label("DashTime: " + dashTime);
         GUILayout.Label("Dash CD:" + waitTime);
-        GUILayout.Label("Current Health: " + currenthealth);
+        GUILayout.Label("Health: " + currenthealth);
         GUILayout.EndArea();
+
 
        
     }

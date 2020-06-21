@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 2312390945482678416, guid: 3bf3df5cec96c7b4384c0cd2ab298fa5,
         type: 3}
       propertyPath: m_Name
-      value: Enemie
+      value: Enemie Variant 1
       objectReference: {fileID: 0}
     - target: {fileID: 2312390945482678416, guid: 3bf3df5cec96c7b4384c0cd2ab298fa5,
         type: 3}
@@ -21,6 +21,11 @@ PrefabInstance:
         type: 3}
       propertyPath: power
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2312390945482678417, guid: 3bf3df5cec96c7b4384c0cd2ab298fa5,
+        type: 3}
+      propertyPath: MinDist
+      value: 3.05
       objectReference: {fileID: 0}
     - target: {fileID: 2312390945482678418, guid: 3bf3df5cec96c7b4384c0cd2ab298fa5,
         type: 3}

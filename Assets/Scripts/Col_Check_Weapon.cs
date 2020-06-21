@@ -23,13 +23,9 @@ public class Col_Check_Weapon : MonoBehaviour
         if (other.tag == "Enemy")
         {
             Debug.Log("Player Hit: " + other.name);
-            // To Do
-            other.GetComponent<Ienemie>().TakeDamage(power);
             //Do Damage 
-            //other.GetComponent<Ienemy>().TakeDamaga(weaponDmg);
-            //Block Damge if we are in Block State
-
-            // Parry.... hehe
+            other.GetComponent<Ienemie>().TakeDamage(power);
+                   
         }
     }
 }

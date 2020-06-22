@@ -19,7 +19,7 @@ public class Enemi_controller : MonoBehaviour
     public float MaxDist = 10;
     public float MinDist = 1;
     public float AttackRange = 2.5f;
-    public float AttackCD;
+    public float AttackCD, AtkWait;
     public bool isAttack;
    
     //public Animator swordAnim;
@@ -116,7 +116,7 @@ public class Enemi_controller : MonoBehaviour
                     if (isAttack)
                     {
                         AttackCD += Time.deltaTime;
-                        if (AttackCD >= 5)
+                        if (AttackCD >= AtkWait)
                         {
                             isAttack = false;
                             AttackCD = 0;

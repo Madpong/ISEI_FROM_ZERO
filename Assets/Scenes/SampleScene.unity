@@ -6752,10 +6752,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fae2740e8ccefa40bb110bdebfae92e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 4128922314326433076, guid: bb4226d5e46dcdd448b347af62f3caf4, type: 3}
+  enemy: {fileID: 2312390945482678416, guid: b5eb88521b374ee42b9807a2ff159a1d, type: 3}
   reSpawnTime: 0
-  waitTime: 10
-  canSpawn: 1
+  waitTime: 150
+  canSpawn: 0
 --- !u!1001 &1614865423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6801,37 +6801,37 @@ PrefabInstance:
     - target: {fileID: 4128922314326433081, guid: bb4226d5e46dcdd448b347af62f3caf4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4112108
+      value: 1.434
       objectReference: {fileID: 0}
     - target: {fileID: 4128922314326433081, guid: bb4226d5e46dcdd448b347af62f3caf4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.61
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 4128922314326433081, guid: bb4226d5e46dcdd448b347af62f3caf4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 27.839897
+      value: 27.185
       objectReference: {fileID: 0}
     - target: {fileID: 4128922314326433081, guid: bb4226d5e46dcdd448b347af62f3caf4,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4128922314326433081, guid: bb4226d5e46dcdd448b347af62f3caf4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.37726215
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4128922314326433081, guid: bb4226d5e46dcdd448b347af62f3caf4,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4128922314326433081, guid: bb4226d5e46dcdd448b347af62f3caf4,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.92610645
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4128922314326433081, guid: bb4226d5e46dcdd448b347af62f3caf4,
         type: 3}
@@ -6846,7 +6846,7 @@ PrefabInstance:
     - target: {fileID: 4128922314326433081, guid: bb4226d5e46dcdd448b347af62f3caf4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -404.328
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4128922314326433081, guid: bb4226d5e46dcdd448b347af62f3caf4,
         type: 3}
@@ -8938,7 +8938,7 @@ MonoBehaviour:
   enemy: {fileID: 4128922314326433076, guid: bb4226d5e46dcdd448b347af62f3caf4, type: 3}
   reSpawnTime: 0
   waitTime: 20.96
-  canSpawn: 0
+  canSpawn: 1
 --- !u!1 &1974679672
 GameObject:
   m_ObjectHideFlags: 0

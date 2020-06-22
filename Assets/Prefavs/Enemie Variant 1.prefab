@@ -27,6 +27,11 @@ PrefabInstance:
       propertyPath: MinDist
       value: 2.3
       objectReference: {fileID: 0}
+    - target: {fileID: 2312390945482678417, guid: 3bf3df5cec96c7b4384c0cd2ab298fa5,
+        type: 3}
+      propertyPath: AtkWait
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2312390945482678418, guid: 3bf3df5cec96c7b4384c0cd2ab298fa5,
         type: 3}
       propertyPath: m_Enabled

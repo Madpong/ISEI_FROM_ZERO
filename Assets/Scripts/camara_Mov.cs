@@ -12,7 +12,9 @@ public class camara_Mov : MonoBehaviour
 
         if (playerPos != null)
         {
-            transform.position = new Vector3(playerPos.position.x, transform.position.y, playerPos.position.z - z);
+            float xNorm = playerPos.position.x;
+            xNorm -= x;
+            transform.position = new Vector3(xNorm, transform.position.y, playerPos.position.z - z);
         }
     }
 }

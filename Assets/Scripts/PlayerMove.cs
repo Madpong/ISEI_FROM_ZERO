@@ -148,7 +148,7 @@ public class PlayerMove : MonoBehaviour
         // GUILayout.Label("Movement to: " + transform.forward.ToString("F3"));
         //GUILayout.Label("Is Dash: " + isDash);
         GUILayout.Label("Screen Height : " + Screen.height);
-        GUILayout.Label("Time: +" + Time.deltaTime.ToString("F3"));
+        GUILayout.Label("Time: " + Time.fixedTime.ToString("F2"));
         GUILayout.Label("Dash CD:" + waitTime);
         GUILayout.Label("Health: " + currenthealth);
         GUILayout.EndArea();

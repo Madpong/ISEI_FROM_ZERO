@@ -8,9 +8,19 @@ public class Ene_ATK : MonoBehaviour, Ienemie
     public float currentHealth;
     public float maxHealth;
     public GameObject MainGameObject;
+    public GameObject player;
+
+    //SOUND --------------------------------------------
+    public AudioSource source;
+    public AudioClip sDie;
+    //--------------------------------------------------
 
     void Start() {
-
+        player = GameObject.FindWithTag("Player");
+        if(player != null)
+        {
+            source = player.GetComponent<AudioSource>();
+        }
         currentHealth = maxHealth;
     }
 
@@ -24,14 +34,17 @@ public class Ene_ATK : MonoBehaviour, Ienemie
         currentHealth -= amount;
         if (currentHealth <= 0)
         {
+            source.PlayOneShot(sDie);
             Die();
+            
         }
     }
 
     void Die() {
 
         Destroy(MainGameObject);
-    
+        
+
     }
    
 }

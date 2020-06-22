@@ -21,16 +21,24 @@ public class Enemi_controller : MonoBehaviour
     public float AttackRange = 2.5f;
     public float AttackCD, AtkWait;
     public bool isAttack;
-   
+
     //public Animator swordAnim;
     //public Animator shieldAnim;
-   // public Animator bodyAnim;
+    // public Animator bodyAnim;
 
-   /* private bool isblocking = false;
+    /* private bool isblocking = false;
 
-    private bool isDash = false, isDashing = false;
-    private float dashTime, waitTime;
-    */
+     private bool isDash = false, isDashing = false;
+     private float dashTime, waitTime;
+     */
+
+    //SOUND --------------------------------------------
+    public AudioSource source;
+    public AudioClip sAtack;
+    //--------------------------------------------------
+
+
+
 
     private Vector3 normalizePlayer;
     void Start() {
@@ -109,6 +117,7 @@ public class Enemi_controller : MonoBehaviour
                     Debug.Log("Hit Player " + hits + " Times");
                     isAttack = true;
                     DoDamage(power);
+                    source.PlayOneShot(sAtack);
 
                 }
                 else

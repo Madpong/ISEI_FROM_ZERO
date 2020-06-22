@@ -8,18 +8,27 @@ public class PlayerMove : MonoBehaviour
     public Texture texture;
     // speed is the rate at which the object will rotate
     public float speed, walkSpeed, dashSpeed;
-    private Vector3 pointShoot;
+    //private Vector3 pointShoot;
     public int currenthealth, maxHealth;
-    
+    //ANIMATIONS ----------------------------------------
     public Animator swordAnim;
     public Animator shieldAnim;
     public Animator bodyAnim;
+    //--------------------------------------------------
 
+    //COMBAT -------------------------------------------
     private bool isblocking = false;
 
     private bool isDash = false, isDashing = false;
     private float dashTime, waitTime;
+    //--------------------------------------------------
 
+    //SOUND --------------------------------------------
+    public AudioSource source;
+    public AudioClip sAtack;
+    public AudioClip sDie;
+
+    //--------------------------------------------------
     void Start() {
 
         currenthealth = maxHealth;
@@ -94,6 +103,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && !isblocking)
         {
             swordAnim.SetTrigger("ATK");
+            source.PlayOneShot(sAtack);
         }
 
 
@@ -127,7 +137,8 @@ public class PlayerMove : MonoBehaviour
         if (currenthealth <= 0) {
 
             Die();
-        
+            source.PlayOneShot(sDie);
+
         }
         // EN HEAL CHECKER ------------------------------------------------------------------------------------------
 
@@ -144,10 +155,10 @@ public class PlayerMove : MonoBehaviour
         GUILayout.BeginArea(new Rect(20, Screen.height - 150, 250, 250));
 
         //GUILayout.Label("Mouse Position: " + Input.mousePosition.ToString("F3"));
-        GUILayout.Label("Character Position: " + transform.position.ToString("F3"));
+        //GUILayout.Label("Character Position: " + transform.position.ToString("F3"));
         // GUILayout.Label("Movement to: " + transform.forward.ToString("F3"));
         //GUILayout.Label("Is Dash: " + isDash);
-        GUILayout.Label("Screen Height : " + Screen.height);
+        //GUILayout.Label("Screen Height : " + Screen.height);
         GUILayout.Label("Time: " + Time.fixedTime.ToString("F2"));
         GUILayout.Label("Dash CD:" + waitTime);
         GUILayout.Label("Health: " + currenthealth);

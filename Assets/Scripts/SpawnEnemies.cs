@@ -8,6 +8,12 @@ public class SpawnEnemies : MonoBehaviour
 
     public float reSpawnTime = 0, waitTime = 10;
     public bool canSpawn = false;
+    //SOUND --------------------------------------------
+    public AudioSource source;
+    public AudioClip sSpawn;
+  
+
+    //--------------------------------------------------
 
     // Time to Spawn
 
@@ -39,5 +45,6 @@ public class SpawnEnemies : MonoBehaviour
     }
     void SpawnEnemy() {
         GameObject a = Instantiate(enemy, transform.position, Quaternion.identity);
+        source.PlayOneShot(sSpawn);
     }
 }

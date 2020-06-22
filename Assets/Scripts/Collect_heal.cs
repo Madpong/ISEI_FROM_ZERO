@@ -25,7 +25,10 @@ public class Collect_heal : MonoBehaviour
         if (player != null)
         {
             //Comparo si estamos cerca 
-            if (Vector3.Distance(transform.position, tPlayer.position) <= healDistance)
+            Vector2 healpos = new Vector2(transform.position.x, transform.position.z);
+            Vector2 playerpos = new Vector2(tPlayer.position.x, tPlayer.position.z);
+            Debug.Log(Vector2.Distance(healpos, playerpos));
+            if (Vector2.Distance(healpos, playerpos) <= healDistance)
             {
                 player.GetComponent<PlayerMove>().currenthealth += HealPower;
                 Destroy(gameObject);

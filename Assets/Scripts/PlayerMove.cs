@@ -144,7 +144,7 @@ public class PlayerMove : MonoBehaviour
         GUILayout.BeginArea(new Rect(20, Screen.height - 150, 250, 250));
 
         //GUILayout.Label("Mouse Position: " + Input.mousePosition.ToString("F3"));
-        //GUILayout.Label("Character Position: " + transform.position.ToString("F3"));
+        GUILayout.Label("Character Position: " + transform.position.ToString("F3"));
         // GUILayout.Label("Movement to: " + transform.forward.ToString("F3"));
         //GUILayout.Label("Is Dash: " + isDash);
         GUILayout.Label("Screen Height : " + Screen.height);

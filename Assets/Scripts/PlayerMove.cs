@@ -2,7 +2,8 @@
 using System.Threading;
 using UnityEditor;
 using UnityEngine;
- 
+using UnityEngine.SceneManagement;
+
 public class PlayerMove : MonoBehaviour
 {
     public Texture texture;
@@ -29,6 +30,15 @@ public class PlayerMove : MonoBehaviour
     public AudioClip sDie;
 
     //--------------------------------------------------
+
+
+    //SCENE --------------------------------------------
+
+    private Scene scene;
+
+    void Awake() {
+        scene = SceneManager.GetActiveScene();
+    }
     void Start() {
 
         currenthealth = maxHealth;
@@ -91,10 +101,13 @@ public class PlayerMove : MonoBehaviour
         // DASH END       -------------------------------------------------------------------------------------
 
         // ARROW MOVEMENT -------------------------------------------------------------------------------------
-        if (Input.GetKey(KeyCode.W)) { transform.position += Vector3.forward * speed * Time.deltaTime; }
-        if (Input.GetKey(KeyCode.S)) { transform.position += Vector3.back * speed * Time.deltaTime; }
-        if (Input.GetKey(KeyCode.A)) { transform.position += Vector3.left * speed * Time.deltaTime; }
-        if (Input.GetKey(KeyCode.D)) { transform.position += Vector3.right * speed * Time.deltaTime; }
+        if (scene.name != "Menus")
+        {
+            if (Input.GetKey(KeyCode.W)) { transform.position += Vector3.forward * speed * Time.deltaTime; }
+            if (Input.GetKey(KeyCode.S)) { transform.position += Vector3.back * speed * Time.deltaTime; }
+            if (Input.GetKey(KeyCode.A)) { transform.position += Vector3.left * speed * Time.deltaTime; }
+            if (Input.GetKey(KeyCode.D)) { transform.position += Vector3.right * speed * Time.deltaTime; }
+        }
         // ARROW MOVEMENT END ----------------------------------------------------------------------------------
 
 
@@ -146,24 +159,28 @@ public class PlayerMove : MonoBehaviour
 
     void Die() {
         Destroy(gameObject);
-    
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
+
     }
    void OnGUI()
     {
-        
-        
-        GUILayout.BeginArea(new Rect(20, Screen.height - 150, 250, 250));
 
-        //GUILayout.Label("Mouse Position: " + Input.mousePosition.ToString("F3"));
-        //GUILayout.Label("Character Position: " + transform.position.ToString("F3"));
-        // GUILayout.Label("Movement to: " + transform.forward.ToString("F3"));
-        //GUILayout.Label("Is Dash: " + isDash);
-        //GUILayout.Label("Screen Height : " + Screen.height);
-        GUILayout.Label("Time: " + Time.fixedTime.ToString("F2"));
-        GUILayout.Label("Dash CD:" + waitTime);
-        GUILayout.Label("Health: " + currenthealth);
-        GUILayout.EndArea();
+        if (scene.name != "Menus")
+        {
+            GUILayout.BeginArea(new Rect(20, Screen.height - 150, 250, 250));
 
+            //GUILayout.Label("Mouse Position: " + Input.mousePosition.ToString("F3"));
+            //GUILayout.Label("Character Position: " + transform.position.ToString("F3"));
+            // GUILayout.Label("Movement to: " + transform.forward.ToString("F3"));
+            //GUILayout.Label("Is Dash: " + isDash);
+            //GUILayout.Label("Screen Height : " + Screen.height);
+            //GUILayout.Label("Current Scene: " + SceneManager.GetActiveScene().name);
+            GUILayout.Label("Time: " + Time.fixedTime.ToString("F2"));
+            GUILayout.Label("Dash CD:" + waitTime);
+            GUILayout.Label("Health: " + currenthealth);
+            GUILayout.EndArea();
+        }
 
        
     }
